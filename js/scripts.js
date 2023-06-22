@@ -23,15 +23,14 @@ function wordCounter(text){
   }
 
 
+
   function censorForTheKids(paragraph) {
     const badWords =['zoinks',  'muppeteer', 'biffaroni', 'loopdaloop'];
-
-    badWords.forEach(function(word){
-    while (paragraph.includes(word)){
-      paragraph = paragraph.toString().replace(badWords, "*****");
-      paragraph = paragraph.split(' ');
-    }
+    reg
+    badWords.forEach(function(word) {
+      paragraph = paragraph.split(word).join('*****');
+      paragraph = paragraph.split(word.charAt(0).toUpperCase() + word.slice(1)).join('*****');
     });
-  
+
     return paragraph;
   }
